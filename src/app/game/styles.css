@@ -1,0 +1,73 @@
+/* Estilo para el fondo oscurecido */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Estilo para el modal */
+.modal {
+  background-color: rgba(32, 28, 28, 0.808);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+  max-height: 70%;
+  overflow: auto;
+  text-align: center;
+  position: relative;
+}
+
+/* Estilo para el botón de cierre */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(253, 223, 71);
+  border: none;
+  border-radius: 50%; /* Agrega un fondo redondo amarillo */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Asegura que el botón esté por encima del modal */
+}
+
+/* Estilo para el contenido del modal (grid de cartas) */
+.modal-content {
+  padding: 2rem; /* Ajusta el espacio interno en porcentaje */
+}
+
+/* Estilo para el grid de cartas */
+
+/* Estilo para el grid de cartas */
+.modal-content .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Muestra 4 columnas en pantallas grandes */
+  gap: 1rem; /* Ajusta el espacio entre elementos en porcentaje */
+}
+
+/* Media Query para ajustar el número de elementos en el grid en pantallas medianas */
+@media (max-width: 1024px) {
+  .modal-content .grid {
+    grid-template-columns: repeat(3, 1fr); /* Muestra 3 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content .grid {
+    grid-template-columns: repeat(2, 1fr); /* Muestra 2 columnas en pantallas pequeñas */
+  }
+}
+
+/* Media Query para ajustar a una sola columna en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .modal-content .grid {
+    grid-template-columns: 1fr; /* Muestra 1 columna en pantallas muy pequeñas */
+  }
+}
+
